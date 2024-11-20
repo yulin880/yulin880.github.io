@@ -1,0 +1,404 @@
+@charset "utf-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: 思源黑体;
+
+}
+
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/*版心*/
+.banxin {
+	margin: 0 auto;
+	width: 1300px;
+	/*	background: pink;*/
+}
+
+/*头部*/
+.header {
+	padding: 35px;
+	height: 120px;
+	background: linear-gradient(200deg, #12efff, #1027f7);
+
+}
+
+
+/* 导航 */
+.daohang {
+	display: inline-block;
+	float: right;
+	position: relative;
+	right: 50px;
+}
+
+.daohang li {
+	float: left;
+	/* width: 150px; */
+	text-align: center;
+	margin: 35px 0px;
+	list-style: none;
+	font: normal 500 20px 微软雅黑;
+}
+
+.daohang a {
+	margin: 30px;
+	color: white;
+	text-decoration: none;
+}
+
+.daohang a:hover {
+	color: rgb(50, 4, 255);
+
+}
+
+
+/*轮播*/
+.slider {
+	margin-top: 20px;
+	width: 100%;
+	min-width: 1000px;
+	height: 450px;
+	position: relative;
+	overflow: hidden;
+	background: #fff;
+	text-align: center;
+}
+
+.slider .bd {
+	width: 1000px;
+	position: absolute;
+	left: 50%;
+	margin-left: -500px
+}
+
+.slider .bd li {
+	width: 1000px;
+	overflow: hidden;
+	position: relative;
+}
+
+.slider .bd li img {
+	display: block;
+	width: 1000px;
+	height: 450px;
+}
+
+.slider .tempWrap {
+	overflow: visible !important
+}
+
+.slider .tempWrap ul {
+	margin-left: -1000px !important;
+}
+
+.slider .bd li .txt {
+	position: absolute;
+	z-index: 9;
+	left: 20px;
+	bottom: 0px;
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	color: #FFF;
+	font-size: 16px;
+}
+
+.slider .pnBtn {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	width: 100%;
+	height: 450px;
+	cursor: pointer;
+}
+
+.slider .prev {
+	left: -50%;
+	margin-left: -500px;
+}
+
+.slider .next {
+	left: 50%;
+	margin-left: 500px;
+}
+
+.slider .pnBtn .blackBg {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 450px;
+	background: #000329;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+.slider .pnBtn .arrow {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	width: 60px;
+	height: 450px;
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+}
+
+.slider .pnBtn .arrow:hover {
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+
+.slider .prev .arrow {
+	right: 0;
+}
+
+.slider .next .arrow {}
+
+
+/* 成果 */
+.chengguo {
+	margin-top: 70px;
+}
+
+.chengguo img {
+
+	width: 400px;
+}
+
+.chengguo>p {
+	text-align: center;
+	/* padding-left: 24px; */
+	line-height: 100px;
+
+}
+
+.carddd {
+
+	/* 100%窗口高度 */
+	height: 500px;
+	/* 弹性布局 水平+垂直居中 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.card {
+	/* 相对定位 */
+	position: relative;
+	width: 280px;
+	height: 450px;
+	margin: 20px;
+	background-color: #757b99;
+	border-radius: 20px;
+	/* 溢出隐藏 */
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	/* 阴影 */
+	box-shadow: 0 0 30px rgba(34, 33, 91, 0.5);
+	color: #fff;
+}
+
+/* 默认大图 */
+.card .photo {
+	/* 绝对定位 */
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 0%;
+	overflow: hidden;
+	/* 动画过渡 */
+	transition: 0.5s;
+}
+
+/* 鼠标移入变小图 */
+.card:hover .photo {
+	top: 30px;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	box-shadow: 0 0 20px rgba(78, 104, 253, 0.8);
+}
+
+/* 黑色到透明的渐变背景,可以更好的看清楚名字 */
+.card .photo::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom, transparent 50%, #548ef8);
+}
+
+/* 鼠标移入背景消失 */
+.card:hover .photo::before {
+	display: none;
+}
+
+.card .photo img {
+	width: 100%;
+	height: 100%;
+	/* 保持原有尺寸比例，裁切长边 */
+	object-fit: cover;
+}
+
+.card h1 {
+	position: absolute;
+	top: 370px;
+	transition: 0.5s;
+}
+
+.card:hover h1 {
+	top: 170px;
+}
+
+.card h2 {
+	margin-top: 220px;
+	width: 80%;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+.card p {
+	width: 90%;
+	text-indent: 32px;
+	font-size: 16px;
+	margin-bottom: 15px;
+	line-height: 30px;
+}
+
+.card a {
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	padding: 8px 32px;
+	border-radius: 8px;
+}
+
+.card a:hover {
+	color: #fff;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 成员介绍 */
+
+.chengyuan {
+	margin: 70px auto;
+}
+
+.chengyuan img {
+	width: 400px;
+}
+
+.chengyuan>p {
+	text-align: center;
+	/* padding-left: 24px; */
+	line-height: 100px;
+
+}
+
+.container ul {
+	margin-top: 20px;
+	list-style: none;
+	text-align: center;
+}
+
+.container li {
+	width: 300px;
+	height: 300px;
+	display: inline-block;
+	margin: 5px;
+	text-align: left;
+	position: relative;
+}
+
+.container li img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	position: relative;
+	z-index: 10;
+	/* 设置transform的过渡 */
+	transition: transform 0.35s;
+}
+
+/* 文本层 */
+.container li .text {
+	width: 100%;
+	height: 100%;
+	background-color: #767b97;
+	color: #ffffff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 20px;
+	/* 默认缩小0.7倍、不透明度为0 */
+	transform: scale(0.7);
+	opacity: 0;
+	/* 设置过渡 */
+	transition: 0.35s;
+}
+
+.container li h3 {
+	margin-top: 13px;
+	font-size: 24px;
+	text-align: center;
+}
+
+.container li p {
+	margin-top: 175px;
+	text-align: center;
+	font-size: 17px;
+}
+
+/* 悬停时图片变化 */
+.container li:hover img {
+	transform: scale(0.45);
+	border-radius: 50%;
+	border: 15px solid rgba(255, 255, 255, 0.25);
+}
+
+/* 悬停时文本层变化 */
+.container li:hover .text {
+	transform: scale(1);
+	opacity: 1;
+}
+
+
+/* 底部 */
+.footer {
+	padding: 35px;
+	height: 120px;
+	background: linear-gradient(200deg, #12efff, #1027f7);
+
+}
+
+.footer p {
+	text-align: center;
+	font: normal 500 50px 楷体;
+	color: #fff;
+}
